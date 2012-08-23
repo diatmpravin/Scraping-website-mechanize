@@ -7,7 +7,7 @@ require 'mechanize'
 a = Mechanize.new
 a.get('http://rubyforge.org/') do |page|
   # Click the login link
-  login_page = a.click(page.link_with(:text => %rLog In/))
+  login_page = a.click(page.link_with(:text => '%rLog In/'))
 
   # Submit the login form
   my_page = login_page.form_with(:action => '/account/login.php') do |f|
